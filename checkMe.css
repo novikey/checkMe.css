@@ -1,0 +1,70 @@
+/* внимание - подключен файл стилей checkMe.css */
+*[style] {
+border: 2px solid blue !important;
+}
+
+/* битые ссылки, ссылки загулшки */
+a:not([href]),  
+a[href="#"],  
+a[href=""],  
+a[href*="javascript:void(0)"] {
+color:red !important;
+}  
+
+/* изображения без атрибута alt */
+img[alt=""],
+img:not([alt]) {
+border:1px solid red !important;
+}  
+
+/* у документа не указан язык */
+html:not([lang]),  
+html[lang=""] {
+border:1px solid red !important;
+}  
+
+/* у документа указана не рекоммендованная кодировка UTF-8 */
+meta[charset]:not([charset="UTF-8"]) {
+border:1px solid red !important;
+}  
+
+/* в идеале мета-тег с указанием кодировки должен стоять перым после открытия head */
+meta[charset="UTF-8"]:not(:first-child) {
+border:2px solid red !important;
+}  
+
+/* у тегов формы нет id */
+input:not([id]),  
+select:not([id]),  
+textarea:not([id]) {
+border:1px solid red !important;
+}
+
+/* у тега label не указан атрибут for */
+label:not([for]) {
+border:1px solid red !important;	
+}  
+
+/* у тегов формы нет атрибута name */
+input:not([type="submit"]):not([name]),  
+select:not([name]),  
+textarea:not([name]) {
+border:2px solid red !important;	
+}  
+
+/* у формы нет атрибута name или id */
+form:not([name]):not([id]) {
+border:1px solid red !important;		
+}  
+
+/* нет контента в элементе button или a */
+button:empty,  
+a:empty {
+border:1px solid red !important;
+}  
+
+/* устаревшие атрибуты тегов script и link */
+script[type="text/javascript"],  
+link[rel="stylesheet"][type="text/css"] {
+border:1px solid red !important;	
+}  
